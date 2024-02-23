@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Heading, FormControl, FormLabel, Input, Select, CheckboxGroup, Checkbox, Stack, Button, useToast, Container } from "@chakra-ui/react";
+import { Box, Heading, FormControl, FormLabel, Input, Select, CheckboxGroup, Checkbox, Stack, Button, useToast, Container, Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
 
