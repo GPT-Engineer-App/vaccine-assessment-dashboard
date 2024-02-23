@@ -164,7 +164,7 @@ const Index = () => {
         </TabPanel>
         <TabPanel>
           <Box p={5}>
-            <Text fontSize="xl">Contenido del Paciente: Información en desarrollo...</Text>
+            <Text fontSize="xl">Contenido Provisional: La sección del paciente está actualmente en desarrollo y estará disponible pronto.</Text>
           </Box>
         </TabPanel>
       </TabPanels>
