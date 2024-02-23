@@ -117,9 +117,31 @@ const Index = () => {
               <FormLabel>Procedencia</FormLabel>
               <Select placeholder="Seleccione la procedencia" name="origin" onChange={handleChange}>
                 <option value="resident">Residente</option>
-                {/* Options for autonomous communities will go here */}
+                <option value="andalucia">Andalucía</option>
+                <option value="aragon">Aragón</option>
+                <option value="asturias">Asturias</option>
+                <option value="baleares">Islas Baleares</option>
+                <option value="canarias">Islas Canarias</option>
+                <option value="cantabria">Cantabria</option>
+                <option value="castillaLaMancha">Castilla-La Mancha</option>
+                <option value="castillaLeon">Castilla y León</option>
+                <option value="cataluna">Cataluña</option>
+                <option value="valencia">Comunidad Valenciana</option>
+                <option value="extremadura">Extremadura</option>
+                <option value="galicia">Galicia</option>
+                <option value="madrid">Comunidad de Madrid</option>
+                <option value="murcia">Región de Murcia</option>
+                <option value="navarra">Navarra</option>
+                <option value="paisVasco">País Vasco</option>
+                <option value="laRioja">La Rioja</option>
+                <option value="ceuta">Ceuta</option>
+                <option value="melilla">Melilla</option>
                 <option value="foreigner">Extranjero</option>
-                {/* Options for continents will go here */}
+                <option value="africa">África</option>
+                <option value="america">América</option>
+                <option value="asia">Asia</option>
+                <option value="europa">Europa</option>
+                <option value="oceania">Oceanía</option>
               </Select>
             </FormControl>
             {/* Additional checkboxes for new risk factors will be added here */}
