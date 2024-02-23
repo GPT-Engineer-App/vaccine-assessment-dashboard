@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Heading, FormControl, FormLabel, Input, Select, CheckboxGroup, Checkbox, Stack, Button, useToast, Container } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
 
 import { useEffect } from "react";
@@ -60,13 +61,11 @@ const Index = () => {
     }
     // Call the processFormData function before showing the success toast
     processFormData(formData);
-    toast({
-      title: "Evaluación enviada.",
-      description: "Los datos del paciente han sido enviados para su evaluación.",
-      status: "success",
-      duration: 5000,
-      isClosable: true,
-    });
+    // Call the processFormData function before showing the success toast
+    processFormData(formData);
+
+    // Redirect to the Vaccine Recommendations page with form data
+    navigate("/recommendations", { state: { formData } });
   };
 
   return (
