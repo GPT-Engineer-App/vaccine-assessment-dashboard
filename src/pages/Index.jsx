@@ -41,6 +41,11 @@ const Index = () => {
     setIsFormValid(isValid);
   };
 
+  const processFormData = (data) => {
+    // This function simulates the process of storing and processing the data
+    console.log("Form Data Processed:", data);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!isFormValid) {
@@ -53,6 +58,8 @@ const Index = () => {
       });
       return;
     }
+    // Call the processFormData function before showing the success toast
+    processFormData(formData);
     toast({
       title: "Evaluación enviada.",
       description: "Los datos del paciente han sido enviados para su evaluación.",
