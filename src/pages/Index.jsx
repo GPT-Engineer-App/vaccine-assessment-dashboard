@@ -162,7 +162,9 @@ const Index = () => {
           </Container>
         </TabPanel>
         <TabPanel>
-          <Text>Paciente content will go here.</Text>
+          <Box p={5}>
+            <Text fontSize="xl">Contenido del Paciente: Información en desarrollo...</Text>
+          </Box>
         </TabPanel>
       </TabPanels>
     </Tabs>
