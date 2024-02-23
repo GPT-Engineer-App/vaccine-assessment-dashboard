@@ -60,31 +60,41 @@ const Index = () => {
                 <option value="other">Otro</option>
               </Select>
             </FormControl>
-            <FormControl>
-              <FormLabel>Condiciones de salud preexistentes</FormLabel>
+            <FormControl as="fieldset">
+              <FormLabel as="legend">Perfil profesional</FormLabel>
               <CheckboxGroup>
                 <Stack spacing={2}>
-                  <Checkbox value="diabetes" onChange={handleCheckboxChange}>
-                    Diabetes
-                  </Checkbox>
-                  <Checkbox value="hypertension" onChange={handleCheckboxChange}>
-                    Hipertensión
-                  </Checkbox>
-                  <Checkbox value="heartDisease" onChange={handleCheckboxChange}>
-                    Enfermedad cardiaca
-                  </Checkbox>
-                  <Checkbox value="obesity" onChange={handleCheckboxChange}>
-                    Obesidad
-                  </Checkbox>
-                  <Checkbox value="smoker" onChange={handleCheckboxChange}>
-                    Fumador
-                  </Checkbox>
-                  <Checkbox value="chronicLungDisease" onChange={handleCheckboxChange}>
-                    Enfermedad pulmonar crónica
-                  </Checkbox>
+                  <Checkbox value="preventiveMedicine">Unidad de Medicina Preventiva y Salud Pública</Checkbox>
+                  <Checkbox value="internationalVaccination">Centro de Vacunación Internacional</Checkbox>
+                  <Checkbox value="publicHealthManager">Gestor de Salud Pública</Checkbox>
+                  <Checkbox value="primaryCare">Atención primaria</Checkbox>
+                  <Checkbox value="occupationalRiskPrevention">Prevención de riesgos laborales</Checkbox>
+                  <Checkbox value="scientificSociety">Sociedad científica</Checkbox>
+                  <Checkbox value="pharmaceuticalIndustry">Industria Farmacéutica</Checkbox>
+                  {/* Additional checkboxes for new risk factors will go here */}
                 </Stack>
               </CheckboxGroup>
             </FormControl>
+            <FormControl isRequired>
+              <FormLabel>Raza/Grupo étnico</FormLabel>
+              <Select placeholder="Seleccione el grupo étnico" name="ethnicity" onChange={handleChange}>
+                <option value="caucasian">Caucásico</option>
+                <option value="black">Negro</option>
+                <option value="asian">Asiático</option>
+                <option value="mixed">Mestizo</option>
+                {/* Add more ethnicity options if necessary */}
+              </Select>
+            </FormControl>
+            <FormControl isRequired>
+              <FormLabel>Procedencia</FormLabel>
+              <Select placeholder="Seleccione la procedencia" name="origin" onChange={handleChange}>
+                <option value="resident">Residente</option>
+                {/* Options for autonomous communities will go here */}
+                <option value="foreigner">Extranjero</option>
+                {/* Options for continents will go here */}
+              </Select>
+            </FormControl>
+            {/* Additional checkboxes for new risk factors will be added here */}
             <Button leftIcon={<FaCheck />} colorScheme="green" type="submit">
               Enviar Evaluación
             </Button>
