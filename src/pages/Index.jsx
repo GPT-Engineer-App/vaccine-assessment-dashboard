@@ -73,7 +73,15 @@ const Index = () => {
                   <Checkbox value="heartDisease" onChange={handleCheckboxChange}>
                     Enfermedad cardiaca
                   </Checkbox>
-                  // Add more checkboxes as needed
+                  <Checkbox value="obesity" onChange={handleCheckboxChange}>
+                    Obesidad
+                  </Checkbox>
+                  <Checkbox value="smoker" onChange={handleCheckboxChange}>
+                    Fumador
+                  </Checkbox>
+                  <Checkbox value="chronicLungDisease" onChange={handleCheckboxChange}>
+                    Enfermedad pulmonar crónica
+                  </Checkbox>
                 </Stack>
               </CheckboxGroup>
             </FormControl>
