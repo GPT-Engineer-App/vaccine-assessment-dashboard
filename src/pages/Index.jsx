@@ -68,6 +68,7 @@ const Index = () => {
     navigate("/recommendations", { replace: true, state: { formData } });
   };
 
+  console.log("Current form data:", formData);
   return (
     <Tabs>
       <TabList>
