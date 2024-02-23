@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Box, Heading, FormControl, FormLabel, Input, Select, CheckboxGroup, Checkbox, Stack, Button, useToast, Container, Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+const navigate = useNavigate();
 import { FaCheck } from "react-icons/fa";
 
 import { useEffect } from "react";
@@ -65,7 +66,7 @@ const Index = () => {
     processFormData(formData);
 
     // Redirect to the Vaccine Recommendations page with form data
-    navigate("/recommendations", { state: { formData } });
+    navigate("/recommendations", { replace: true, state: { formData } });
   };
 
   return (
