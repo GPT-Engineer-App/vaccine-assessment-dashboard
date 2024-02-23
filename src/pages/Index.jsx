@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import { Box, Heading, FormControl, FormLabel, Input, Select, CheckboxGroup, Checkbox, Stack, Button, useToast, Container } from "@chakra-ui/react";
 import { FaCheck } from "react-icons/fa";
 
+import { useEffect } from "react";
+
 const Index = () => {
   const [formData, setFormData] = useState({
     age: "",
     sex: "",
     healthConditions: [],
+    ethnicity: "",
+    origin: "",
   });
+  const [isFormValid, setIsFormValid] = useState(false);
   const toast = useToast();
 
   const handleChange = (e) => {
@@ -26,11 +31,28 @@ const Index = () => {
     }));
   };
 
+  useEffect(() => {
+    validateForm();
+  }, [formData]);
+
+  const validateForm = () => {
+    const { age, sex, ethnicity, origin } = formData;
+    const isValid = age && sex && ethnicity && origin;
+    setIsFormValid(isValid);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically handle the form submission,
-    // including validation and sending data to a backend service.
-    // For the sake of this example, we'll just display a toast:
+    if (!isFormValid) {
+      toast({
+        title: "Error",
+        description: "Por favor llene todos los campos requeridos.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+      return;
+    }
     toast({
       title: "Evaluación enviada.",
       description: "Los datos del paciente han sido enviados para su evaluación.",
@@ -95,7 +117,7 @@ const Index = () => {
               </Select>
             </FormControl>
             {/* Additional checkboxes for new risk factors will be added here */}
-            <Button leftIcon={<FaCheck />} colorScheme="green" type="submit">
+            <Button leftIcon={<FaCheck />} colorScheme="green" type="submit" isDisabled={!isFormValid}>
               Enviar Evaluación
             </Button>
           </Stack>
